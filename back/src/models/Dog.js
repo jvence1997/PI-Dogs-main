@@ -5,29 +5,45 @@ module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define('dog', {
     id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true, 
-    },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
+      primaryKey: true,
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true
     },
-    height: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
+    image: {
+      type: DataTypes.STRING,
     },
-    weight: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
+    minHeight: {
+      type: DataTypes.INTEGER,
+      validate: { min: 1, max: 100 },
+    },
+    maxHeight: {
+      type: DataTypes.INTEGER,
+      validate: { min: 1, max: 100 },
+    },
+    minWeight: {
+      type: DataTypes.INTEGER,
+      validate: { min: 1, max: 100 },
+    },
+    maxWeight: {
+      type: DataTypes.INTEGER,
+      validate: { min: 1, max: 100 },
     },
     life_span: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      validate: { min: 1, max: 20 },
+      allowNull: false,
     },
-  });
+    created: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    }
+  }, {
+    timestamps: false,
+  }
+  );
 };
