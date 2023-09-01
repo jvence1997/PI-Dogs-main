@@ -1,0 +1,39 @@
+.div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../imagen/wallhaven-mpkxrm.jpg');
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    background-size: cover;
+
+}
+
+.button {
+    background-color: #fa8bb0;
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 100px;
+    cursor: -moz-grabbing;
+    margin: 0 1rem;
+}
+
+.button:hover {
+    background-color: hwb(216 51% 0%);
+    color: #ffffff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    border-radius: 100px;
+    cursor: -moz-grabbing;
+    margin: 0 1rem;
+    box-shadow: 0 0 20px #008bfc, 0 0 50px #008bfc, 0 0 100px #008bfc;
+    animation: animate 2s linear infinite;
+}

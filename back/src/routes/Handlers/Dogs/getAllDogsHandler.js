@@ -5,8 +5,7 @@ const getAllDogsHandler = async (req, res) => {
     const {name} = req.query;
 
     try {
-        const results = 
-    name 
+        const results = name 
     ? await getDogsByName(name) 
     : await getAllDogs();
 
