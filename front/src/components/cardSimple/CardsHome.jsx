@@ -1,9 +1,11 @@
 import Card from "../card/card";
-import style from './cardContainer.module.css';
-import { useSelector} from "react-redux";
+import style from './CardHome.module.css';
+import { useSelector } from "react-redux";
 
 const CardContainer = () => {
+
     const allDogs = useSelector(state => state.allDogs);
+
     return (
         <div className={style.CardContainer}>
             {allDogs.map((e) => {
@@ -13,18 +15,14 @@ const CardContainer = () => {
                         id={e.id}
                         name={e.name}
                         image={e.image}
-                        minHeight={e.minHeight}
-                        maxHeight={e.maxHeight}
-                        minWeight={e.minWeight}
+                        temperament={e.temperament}
                         maxWeight={e.maxWeight}
-                        life_span={e.life_span}
                     />
                 )
             })}
 
         </div>
     )
-}
-
+};
 
 export default CardContainer;
